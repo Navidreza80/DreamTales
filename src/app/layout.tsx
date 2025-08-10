@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { ABeeZee, Butterfly_Kids } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const abeeze = ABeeZee({
+  variable: "--font-abeeze",
+  weight: ["400"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const butterflyKids = Butterfly_Kids({
+  variable: "--font-butterfly-kids",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${abeeze.variable} ${abeeze.className} ${butterflyKids.variable} antialiased`}
       >
         {children}
       </body>
