@@ -5,11 +5,13 @@ import "./globals.css";
 const abeeze = ABeeZee({
   variable: "--font-abeeze",
   weight: ["400"],
+  subsets: ["latin"],
 });
 
 const butterflyKids = Butterfly_Kids({
   variable: "--font-butterfly-kids",
   weight: ["400"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
