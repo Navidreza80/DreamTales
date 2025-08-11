@@ -1,3 +1,4 @@
+// app/create/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -21,13 +22,29 @@ export default function CreatePage() {
     setStory("");
 
     try {
-      const res = await fetch("/api/generate-story", {
+      const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt }),
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
+          "HTTP-Referer": "https://dreamtales.netlify.app",
+          "X-Title": "DreamTales",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "openai/gpt-oss-20b:free",
+          messages: [
+            {
+              role: "user",
+              content: `You are a magical children's storyteller. Write a short, fun, colorful story based on this idea: "${prompt}"`,
+            },
+          ],
+        }),
       });
+
       const data = await res.json();
-      setStory(data.story || "Something magical went wrong 🪄");
+      const generated =
+        data.choices?.[0]?.message?.content || "No story found.";
+      setStory(generated);
     } catch (err) {
       console.error(err);
       setStory("Error generating story.");
