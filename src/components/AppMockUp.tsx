@@ -3,7 +3,7 @@ import IllustrationSVG from "./IllustrationSVG";
 
 export default function AppMockup(): JSX.Element {
   return (
-    <div className="max-w-md">
+    <div className="md:max-w-md w-full">
       <div className="bg-white rounded-3xl shadow-xl p-8">
         <div className="flex items-center justify-between mb-6">
           <div className="flex gap-3 items-center">
@@ -26,7 +26,7 @@ export default function AppMockup(): JSX.Element {
           <IllustrationSVG />
         </div>
 
-        <div className="mt-6 flex justify-between items-center w-[419px]">
+        <div className="mt-6 flex justify-between items-center md:w-[419px] w-full">
           <div className="flex gap-3">
             <button className="text-sm px-4 py-2 rounded-full border border-slate-300 hover:border-[#7c3aed] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7c3aed]">
               Preview
