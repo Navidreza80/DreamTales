@@ -26,12 +26,9 @@ export default function AppMockup(): JSX.Element {
           <IllustrationSVG />
         </div>
 
-        <div className="mt-6 flex justify-between items-center">
-          <div className="text-sm text-slate-700 select-text">
-            PDF • Narration • Print
-          </div>
+        <div className="mt-6 flex justify-between items-center w-[419px]">
           <div className="flex gap-3">
-            <button className="text-sm px-4 py-2 rounded-md border border-slate-300 hover:border-[#7c3aed] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7c3aed]">
+            <button className="text-sm px-4 py-2 rounded-full border border-slate-300 hover:border-[#7c3aed] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7c3aed]">
               Preview
             </button>
             <button className="text-sm px-6 py-2 rounded-full bg-[#7c3aed] text-white font-semibold shadow-md hover:brightness-110 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4c1d95]">
